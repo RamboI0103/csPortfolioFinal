@@ -16,12 +16,12 @@ Table of contents
 }
 .menu {
     display: flex;
-    border: 5px solid red;
+    border: 5px solid rgb(202, 221, 231);
     padding: 20px;
     justify-content: center;
 }
 .menu a {
-    color: white;
+    color: rgb(226, 164, 113);
     text-decoration: none;
     text-align: center;
     font-family: 'Bangers', cursive;
@@ -34,7 +34,7 @@ Table of contents
     color: white;
     text-align: center;
     padding: 20px;
-    border: 1px solid red;
+    border: 1px solid rgb(202, 221, 231);
 }
 
 
@@ -110,7 +110,7 @@ div {
 
 /*js file formatting*/
 canvas {
-    border: thin solid red;
+    border: thick solid rgb(202, 221, 231);
     position: relative;
     left: 50%;
     top: 50%;
