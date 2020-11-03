@@ -93,9 +93,9 @@ body {
 .another-container {
     display: flex;
     border: 5px solid #000000;
-    align-content: space-around;
+    /*align-content: space-around;
     padding: 40px;
-    margin-top: 20px;
+    margin-top: 20px;*/
     font-family: Arial;
     font-size: 28px;
 }
@@ -113,14 +113,19 @@ img {
 div {
     display: block;
 }
-
+#sketchholder {
+  position: relative;
+}
 /*js file formatting*/
 canvas {
     border: thick solid rgb(202, 221, 231);
-    position: relative;
+    /*position: relative;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, 0%);
+    top: 50%;*/
+    right: 10px;
+    /*transform: translate(-50%, 0%);*/
 }
 
-
+#breadcrumbs a {
+  color: rgb(66, 180, 180);
+}

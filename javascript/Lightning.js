@@ -1,6 +1,6 @@
-var startx=0, starty=150, endx=0, endy=150, width=300;
+var startx=0, starty=150, endx=0, endy=150;
 function setup() {
-  var cnv=createCanvas(width, width);
+  var cnv=createCanvas(300, 300);
   cnv.parent('sketchholder');
   strokeWeight(2);
   background(0);
@@ -13,7 +13,7 @@ function draw() {
   var rand3 = (Math.random() * 255) + 1;
 
   stroke(rand, rand2, rand3);
-  while (endx < width)
+  while (endx < 300)
   {
     var L=(int)(Math.random() * 9 );
     var L2=(int)(Math.random() * 19) -9;
