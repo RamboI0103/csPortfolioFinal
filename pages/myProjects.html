@@ -1,34 +1,76 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+	<head>
     <meta charset="utf-8">
     <title>MyPortfolio</title>
+    
     <link href='https://fonts.googleapis.com/css?family=Notable' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"> </script>
-    <script src="javascript/ball.js"> </script>
-</head>
 
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/main-nav.css">
+    
+</head>
+    
 <body>
     <h1><img id="bannerimg" src="../images/hunterbanner.jpg" alt="destiny2"></h1>
-    <nav class="menu">
-        <div class="box">
-            <a href="../index.html">Home</a>
-        </div>
-        <div class="box">
-            <a href="#">AboutMe</a>
-        </div>
-        <div class="box">
-            <a href="#">Projekts</a>
-        </div>
-        <div class="box">
-            <a href="#">Deep Thoughts</a>
-        </div>
+    <nav id="main-nav">
+        <ul>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">AboutMe
+                    
+                </a>
+                
+            </li>
+            <li>
+                <a href="pages/myProjects.html">Projects
+                    <span class="arrow">&#x25BC;</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">StringThing</a>
+                    </li>
+                    <li>
+                        <a href="Lightning.html">Lightning</a>
+                    </li>
+                    <li>
+                        <a href="#">DataStructures
+                            <span class="arrow">&#x25B6;</span>
+                        </a>
+                        <ul class="submenu-2">
+                            <li>
+                                <a href="#">Sets</a>
+                            </li>
+                            <li>
+                                <a href="#">Maps</a>
+                            </li>
+                            <li>
+                                <a href="#">StacksNQueues</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            
+            <li>
+                <a href="#">DeepThoughts</a>
+            </li>
+        </ul>
     </nav>
   
     <div>
+        <a href="../index.html">Home</a> > Projects
         <div class="flexbox-container">
             <div class="flexbox-item flexbox-item-1">bnbnnmbnm
             </div>
