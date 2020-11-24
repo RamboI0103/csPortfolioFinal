@@ -60,8 +60,8 @@ function draw() {
   textSize(20);
   text("Total: " + total,200,370);
   text("current rolls: " + rolls, 90, 140);
-  total=total/9;
-  text("Average: " + total,200,350);
+  var average=total/9;
+  text("Average: " + average,200,350);
 }
 function mousePressed()
 {
