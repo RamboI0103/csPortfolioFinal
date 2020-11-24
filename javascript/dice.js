@@ -1,105 +1,133 @@
-//this need to be converted to JS
-int total=0;
-String rollss="";
-void setup() {
-  size(500, 500);
+function setup() {
+  var cnv=createCanvas(500, 500);
+  cnv.parent('sketchholder');
   background(0);
-  frameRate(1);
-  //noLoop();
+  //frameRate(1);
+  noLoop();
 }
-void draw() {
-  dice run=new dice();
-  run.frame();
-  for (int i=0; i<=400; i+=200) {
-    //System.out.println("i"+i);
-    for (int j=0; j<=400; j+=200) {
-      //System.out.println("j"+j);
-      int d=run.roll();
-      if (d==1) {
-        run.rollOne(j, i);
-        total+=1;
-      }
-      if (d==2) {
-        run.rollTwo(j, i);
-        total+=2;
-      }
-      if (d==3) {
-        run.rollThree(j, i);
-        total+=3;
-      }
-      if (d==4) {
-        run.rollFour(j, i);
-        total+=4;
-      }
-      if (d==5) {
-        run.rollFive(j, i);
-        total+=5;
-      }
-      if (d==6) {
-        run.rollSix(j, i);
-        total+=6;
-      }
-    }
-  }
+function draw() {
+  var rolls="";
+  var total=0;
+  var r = 0;
+  strokeWeight(3);
+  fill(100);
+  rect(0, 0, 500, 500);//clear screen rect
+  var d1 = new Die(0,0);
+  r=d1.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d1.show();
+  var d2 = new Die(200,0);
+  r=d2.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d2.show();
+  var d3 = new Die(400,0);
+  r=d3.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d3.show();
+  var d4 = new Die(0,200);
+  r=d4.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d4.show();
+  var d5 = new Die(200,200);
+  r=d5.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d5.show();
+  var d6 = new Die(400,200);
+  r=d6.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d6.show();
+  var d7 = new Die(0,400);
+  r=d7.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d7.show();
+  var d8 = new Die(200,400);
+  r=d8.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d8.show();
+  var d9 = new Die(400,400);
+  r=d9.roll();
+  total += r;
+  rolls=rolls+" "+ r;
+  d9.show();
   textSize(20);
   text("Total: " + total,200,370);
-  text("current rolls:", 90, 140);
+  text("current rolls: " + rolls, 90, 140);
   total=total/9;
   text("Average: " + total,200,350);
 }
-class dice {
-  String rolls="";
-  dice() {
+function mousePressed()
+{
+  redraw();
+}
+class Die //models one single dice cube
+{
+  constructor(x, y) //constructor
+  {
+    this.posx = x;
+    this.posy = y;
+    this.myroll = 0;
   }
-  void frame() {
+  roll()
+  {  
+    this.myroll=(int)(Math.random()*6)+1;
+    return this.myroll;
+  }
+  show()
+  {
     strokeWeight(3);
     fill(100);
-    rect(0, 0, 500, 500);//clear screen rect
     fill(255);//white
-    //all the background dice squares
-    rect(0, 0, 100, 100, 30);//tl
-    rect(200, 0, 100, 100, 30);//tm
-    rect(400, 0, 100, 100, 30);//tr
-    rect(0, 200, 100, 100, 30);//ml
-    rect(200, 200, 100, 100, 30);//mm
-    rect(400, 200, 100, 100, 30);//mr
-    rect(0, 400, 100, 100, 30);//bl
-    rect(200, 400, 100, 100, 30);//bm
-    rect(400, 400, 100, 100, 30);//br
+    rect(this.posx, this.posy, 100, 100, 30);
+    if (this.myroll == 1) {
+      this.rollOne(this.posx, this.posy);
+    }
+    if (this.myroll == 2) {
+      this.rollTwo(this.posx, this.posy);
+    }
+    if (this.myroll == 3) {
+      this.rollThree(this.posx, this.posy);
+    }
+    if (this.myroll == 4) {
+      this.rollFour(this.posx, this.posy);
+    }
+    if (this.myroll == 5) {
+      this.rollFive(this.posx, this.posy);
+    }
+    if (this.myroll == 6) {
+      this.rollSix(this.posx, this.posy);
+    }
   }
-  int roll() {
-    int roll=(int)(Math.random()*6)+1;
-    //System.out.println(roll);
-    rolls=rolls+" "+ roll;
-    System.out.print(rolls);
-    textSize(20);
-    text(rolls, 210, 140);
-    rollss=rolls;
-    return roll;
-  }
-  void rollOne(int x, int y) {
+  rollOne( x,  y) {
     fill(0);
     ellipse(x+50, y+50, 10, 10);
   }
-  void rollTwo(int x, int y) {
+  rollTwo( x,  y) {
     fill(0);
     ellipse(x+25, y+25, 10, 10);
     ellipse(x+75, y+75, 10, 10);
   }
-  void rollThree(int x, int y) {
+  rollThree( x,  y) {
     fill(0);
     ellipse(x+50, y+50, 10, 10);
     ellipse(x+25, y+25, 10, 10);
     ellipse(x+75, y+75, 10, 10);
   }
-  void rollFour(int x, int y) {
+  rollFour( x,  y) {
     fill(0);
     ellipse(x+25, y+25, 10, 10);
     ellipse(x+75, y+75, 10, 10);
     ellipse(x+75, y+25, 10, 10);
     ellipse(x+25, y+75, 10, 10);
   }
-  void rollFive(int x, int y) {
+  rollFive( x,  y) {
     fill(0);
     ellipse(x+25, y+25, 10, 10);
     ellipse(x+75, y+75, 10, 10);
@@ -107,7 +135,7 @@ class dice {
     ellipse(x+25, y+75, 10, 10);
     ellipse(x+50, y+50, 10, 10);
   } 
-  void rollSix(int x, int y) {
+  rollSix( x,  y) {
     fill(0);
     ellipse(x+25, y+25, 10, 10);
     ellipse(x+75, y+75, 10, 10);
@@ -116,4 +144,5 @@ class dice {
     ellipse(x+25, y+50, 10, 10);
     ellipse(x+75, y+50, 10, 10);
   }
+}
 }
