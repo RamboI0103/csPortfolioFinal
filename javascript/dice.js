@@ -145,4 +145,3 @@ class Die //models one single dice cube
     ellipse(x+75, y+50, 10, 10);
   }
 }
-}
